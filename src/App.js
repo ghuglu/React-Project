@@ -7,22 +7,24 @@ import Dashboard from "./pages/Dashboard";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState("home");
-
-
-    if (page === "login") {
-      return <Login setPage={setPage} />;
-    }
-
-    if (page === "register") {
-      return <Register setPage={setPage} />;
-    }
-
-    if (page === "dashboard") {
-      return <Dashboard setPage={setPage} />;
-    }
-
-    return <Home setPage={setPage} />;
-  };
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read reactjs 1234
+        </a>
+      </header>
+    </div>
+  );
+}
 
 export default App;

@@ -68,3 +68,50 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+.navbar{
+  background:#1e3a8a;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 30px;
+}
+.logo{ font-size:20px; font-weight:bold; }
+.nav-btns button{
+  margin-left:10px;
+  background:transparent;
+  border:1px solid #7aa0ff;
+  color:white;
+  padding:6px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.btn-active{ background:#3ac2cb!important; border:none!important; }
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px 60px;
+}
+.hero-left{ width:50%; }
+.hero-left h1{ font-size:36px; font-weight:700; line-height:1.2; }
+.hero-left p{ color:#666; margin-top:15px; font-size:14px; line-height:1.6; }
+.hero-actions{ margin-top:25px; }
+.btn-primary{ background:#3ac2cb; color:white; border:none; padding:10px 20px; border-radius:6px; margin-right:10px; cursor:pointer; }
+.btn-secondary{ background:white; border:1px solid #ddd; padding:10px 20px; border-radius:20px; cursor:pointer; }
+
+.hero-right{ width:38%; }
+.card{
+  border:1px solid #ddd;
+  border-top:4px solid #1e3a8a;
+  border-radius:16px;
+  padding:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+  min-height:180px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+.arrow{ background:#6ee1e8; border:none; width:32px; height:32px; border-radius:50%; cursor:pointer; font-weight:bold; }

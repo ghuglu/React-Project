@@ -1,19 +1,27 @@
-import React from "react";
-function Navbar({ setPage }) {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Navbar({ handleScroll, navItems, styles }) {
   return (
-    <div className="navbar">
-      <h2>WebTech Practice</h2>
-
-      <div>
-        <button>About</button>
-        <button>Services</button>
-        <button>Theme</button>
-
-        <button onClick={() => setPage("login")}>Login</button>
-
-        <button onClick={() => setPage("register")} className="signup-btn">SignUp</button>
+    <nav style={styles.navbar}>
+      <div style={styles.logo}>WebTech Practice</div>
+      <div style={styles.navLinks}>
+        {navItems.map((item, i) => {
+          if (item.type === 'scroll') {
+            return (
+              <span key={i} onClick={() => handleScroll(item.id)} style={styles.navLink}>
+                {item.label}
+              </span>
+            );
+          }
+          return (
+            <Link key={i} to={item.path} style={item.isButton ? styles.signupBtn : styles.navLink}>
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
-    </div>
+    </nav>
   );
 }
 

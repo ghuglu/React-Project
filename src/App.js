@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
-import "./App.css";
+import { styles } from "./theme/themecontext";
 
 function App() {
-  const [page, setPage] = useState("home");
   return (
-    <div className="App">
-      {page === "home" && <Home setPage={setPage} />}
-      {page === "login" && <Login setPage={setPage} />}
-      {page === "register" && <Register setPage={setPage} />}
-      {page === "dashboard" && <Dashboard setPage={setPage} />}
-    </div>
+    <Router>
+      <div style={styles.container}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 export default App;

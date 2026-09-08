@@ -1,90 +1,99 @@
-import React, { useState } from 'react';
-import './Home.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SliderCard from '../components/slider.jsx';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+import { styles } from '../theme/themecontext.js';
 
-const slides = [
-  { title: "Complete Auth Flow", desc: "Beautiful dark/light mode with smooth transition,peristed across all pages and session." },
-  { title: "Responsive Design", desc: "Works perfectly on Desktop,Tablet and Mobile devices." },
-  { title: "HTML CSS Javascript", desc: "Built using only HTML,CSS AND Vanilla Javascript." }
+const navLinks = [
+  { label: 'About', id: 'about', type: 'scroll' },
+  { label: 'Services', id: 'services', type: 'scroll' },
+  { label: 'Theme', path: '/theme', type: 'link' },
+  { label: 'Login', path: '/login', type: 'link' },
+  { label: 'SignUp', path: '/register', type: 'link', isButton: true },
 ];
 
-function Home({ setPage }) {
-  const [index, setIndex] = useState(0);
+const slides = [
+  { title: "Complete Auth Flow", desc: "Beautiful dark/light mode with smooth transition." },
+  { title: "Responsive Design", desc: "Works perfectly on Desktop, Tablet and Mobile." },
+  { title: "HTML CSS Javascript", desc: "Built using only HTML, CSS AND Vanilla Javascript." }
+];
+
+const aboutList = [
+  "Single-file pages you can open directly in any modern browser",
+  "Single-file pages you can open directly in any modern browser",
+  "Single-file pages you can open directly in any modern browser",
+  "Single-file pages you can open directly in any modern browser",
+  "Single-file pages you can open directly in any modern browser",
+  "Single-file pages you can open directly in any modern browser"
+];
+
+const servicesList = [
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." },
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." },
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." },
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." },
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." },
+  { title: "Authentication Templates", desc: "Beautiful login and signup forms with real-time validation, error handling, and seamless localstorage integration." }
+];
+
+const AboutSection = ({ heading, description, data }) => {
   return (
-    <div>
-      <nav className="navbar">
-        <div className="logo">WebTech Practice</div>
-        <div className="nav-links">
-          <button>About</button>
-          <button>Services</button>
-          <button>Theme</button>
-          <button onClick={()=>setPage("login")}>Login</button>
-          <button className="signup-btn" onClick={()=>setPage("register")}>SignUp</button>
-        </div>
-      </nav>
+    <div id="about" style={styles.about}>
+      <h1>{heading}</h1>
+      <p style={styles.aboutPara}>{description}</p>
+      <div style={styles.aboutList}>
+        {data.map((item, i) => (<div key={i} style={styles.aboutBox}>{item}</div>))}
+      </div>
+    </div>
+  );
+};
 
-      <div className="hero">
-        <div className="hero-left">
-          <h1>Launch your Web Tech <br/>
-             practice site in minutes</h1>
-          <p>A clean modern starter template with Login, SignUp Dashboard, Profile and Logout pages using only HTML/CSS/ JS and browser localStorage Perfect for learning and practicing web development fundamentals.</p>
-          <div className="hero-btns">
-            <button className="btn-cyan" onClick={()=>setPage("register")}>Sign Up</button>
-            <button className="btn-outline" onClick={()=>setPage("login")}>I already have an account</button>
+const ServicesSection = ({ heading, data }) => {
+  return (
+    <div id="services" style={styles.included}>
+      <h1>{heading}</h1>
+      <div style={styles.includeGrid}>
+        {data.map((item, i) => (
+          <div key={i} style={styles.includeCard}>
+            <h3 style={styles.includeCardTitle}>{item.title}</h3>
+            <p style={styles.includeCardText}>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+function Home() {
+  const handleScroll = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div style={styles.container}>
+      <Navbar handleScroll={handleScroll} navItems={navLinks} styles={styles} />
+
+      <div style={styles.hero}>
+        <div style={styles.heroLeft}>
+          <h1 style={styles.heroTitle}>Launch your Web Tech <br /> practice site in minutes</h1>
+          <p style={styles.heroPara}>A clean modern starter template with Login, SignUp, Dashboard, Profile and Logout pages using only HTML/CSS/JS and browser localStorage.</p>
+          <div style={styles.heroBtns}>
+            <Link to="/register" style={styles.btnCyan}>Sign Up</Link>
+            <Link to="/login" style={styles.btnOutline}>I already have an account</Link>
           </div>
         </div>
-
-        <div className="hero-right">
-          <div className="card">
-            <button className="arrow left" onClick={()=>setIndex(index===0?2:index-1)}>&lt;</button>
-            <h2>{slides[index].title.split(" ")[0]}<br/>{slides[index].title.split(" ").slice(1).join(" ")}</h2>
-            <p>{slides[index].desc}</p>
-            <button className="arrow right" onClick={()=>setIndex(index===2?0:index+1)}>&gt;</button>
-            <div className="dots">
-              {slides.map((_,i)=><div key={i} className={i===index?"dot active":"dot"}></div>)}
-            </div>
-          </div>
+        <div style={styles.heroRight}>
+          <SliderCard slides={slides} styles={styles} />
         </div>
       </div>
 
-     
-      <div className="about">
-        <h1>About This Project</h1>
-        <p className="about-para">This comprehensive template is designed for students and developers to practice modern web fundamentals-responsive layouts, accessible forms, client-side state management, and component architecture-without any frameworks or complex build process.</p>
-        <div className="about-list">
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-          <div className="about-box">Single-file pages you can open directly in any modern browser</div>
-        </div>
-      </div>
+      <AboutSection heading="About This Project" description="This comprehensive template is designed for students and developers to practice modern web fundamentals-responsive layouts, accessible forms, client-side state management, and component architecture-without any frameworks." data={aboutList} />
+      <ServicesSection heading="What's Included" data={servicesList} />
 
-      
-      <div className="included">
-        <h1>What's Included</h1>
-        <div className="included-grid">
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-          <div className="include-card"><h3>Authentication Templates</h3><p>Beautiful login and signup forms with real-time validation, error handling, and seamless localStorage integration.</p></div>
-        </div>
-      </div>
-
-      
-      <footer className="footer">
-        <div className="footer-left">© 2025 WebTech Practice. Built for learning and growth.</div>
-        <div className="footer-right">
-          <button className="foot-btn">About</button>
-          <button className="foot-btn">Services</button>
-          <button className="foot-btn">Theme</button>
-          <button className="foot-btn">Login</button>
-          <button className="foot-btn cyan">Sign Up</button>
-        </div>
-      </footer>
+      <Footer handleScroll={handleScroll} styles={styles} />
     </div>
   );
 }
+
 export default Home;

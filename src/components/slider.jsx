@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
-import { styles } from '../theme/themecontext';
+import React, { useState, useContext } from "react";
+import { getStyles } from "../theme/HomeStyle";
+import { ThemeContext } from "../theme/themecontext";
 
 const SliderCard = ({ slides }) => {
   const [index, setIndex] = useState(0);
+
+  const theme = useContext(ThemeContext);
+
+  const styles = getStyles(theme);
 
   const prevSlide = () => {
     setIndex((index - 1 + slides.length) % slides.length);
@@ -36,7 +41,7 @@ const SliderCard = ({ slides }) => {
         style={styles.arrowRight}
         onClick={nextSlide}
       >
-       &gt;
+        &gt;
       </button>
 
       <div style={styles.dots}>

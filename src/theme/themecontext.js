@@ -1,275 +1,136 @@
-export const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "15px 60px",
-    backgroundColor: "#164b8b",
-    borderBottom: "1px solid #fff",
-    position: "sticky",
-    top: "0",
-    zIndex: "100"
-  },
-  logo: {
-    fontWeight: "800",
-    fontSize: "20px",
-    color: "#fff"
-  },
-  navLinks: {
-    display: "flex",
-    gap: "25px",
-    alignItems: "center"
-  },
-  navLink: {
-    cursor: "pointer",
-    color: "#fff",
-    border: '1px solid #4ECDC4',
-    fontWeight: "500",
-    textDecoration: "none",
-    fontSize: "16px",
-    padding: '8px 18px',
-    borderRadius: '8px',
-  },
-  signupBtn: {
-    backgroundColor: "#4ECDC4",
-    color: "white",
-    padding: "8px 18px",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: "600",
-    display: "inline-block"
-  },
-  hero: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '80px 60px',
-    gap: '40px',
-  },
-  heroLeft: { 
-    flex: 1.2 
-  },
-  heroTitle:{
-     fontSize: '42px',
-     fontWeight: '800',
-     color: '#333',
-     lineHeight: '1.15',
-     margin: '0 0 18px 0',
-  },
-  heroPara: {
-     fontSize: '14px',
-     color: '#333',
-     lineHeight: '1.7',
-     margin: '0 0 28px 0',
-     maxWidth: '520px',
-  },
-  heroBtns: {
-     display: 'flex',
-      gap: '14px',
-      marginTop: '24px' 
+import React, { createContext } from "react";
+
+export const theme = {
+  palette: {
+    primary: {
+      main: "#164b8b",
     },
-  btnCyan: {
-    background: '#4ECDC4',
-    color: 'white',
-    border: 'none',
-    padding: '12px 22px',
-    borderRadius: '8px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    display: 'inline-block'
-  },
-  btnOutline: {
-    background: 'white',
-    border: '1px solid #4ECDC4',
-    padding: '12px 22px',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    color: '#333',
-    textDecoration: 'none',
-    display: 'inline-block'
-  },
-  heroRight: {
-     flex: 0.8, 
-     display: 'flex', 
-     justifyContent: 'center' 
+
+    secondary: {
+      main: "#4ECDC4",
     },
-  card: {
-    position: 'relative',
-    background: '#fff',
-    width: '400px',
-    minHeight: '250px',
-    border: 'none',
-    borderTop: '3px solid #164b8b',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    borderRadius: '28px',
-    padding: '30px',
-    boxSizing: 'border-box',
+
+    text: {
+      primary: "#333",
+      white: "#fff",
+    },
+
+    background: {
+      default: "#f8fafc",
+      paper: "#fff",
+    },
+
+    border: {
+      light: "#fff",
+      default: "#d9dce6",
+    },
   },
-  sliderContent: {
-    width: '100%',
-    textAlign: 'center',
+
+  typography: {
+    fontFamily: "Arial, sans-serif",
+
+    h1: {
+      fontSize: "42px",
+      fontWeight: 800,
+      lineHeight: 1.15,
+    },
+
+    h3: {
+      fontSize: "20px",
+      fontWeight: 700,
+      lineHeight: 1.3,
+    },
+
+    heading: {
+      fontSize: "16px",
+      fontWeight: 700,
+    },
+
+    body1: {
+      fontSize: "14px",
+      fontWeight: 400,
+      lineHeight: 1.7,
+    },
+
+    body2: {
+      fontSize: "15px",
+      fontWeight: 400,
+      lineHeight: 1.7,
+    },
+
+    button: {
+      fontSize: "14px",
+      fontWeight: 600,
+    },
+
+    nav: {
+      fontSize: "16px",
+      fontWeight: 500,
+    },
+
+    logo: {
+      fontSize: "20px",
+      fontWeight: 800,
+    },
+
+    small: {
+      fontSize: "13px",
+      fontWeight: 400,
+    },
   },
-  sliderHeading: {
-    margin: '0 0 15px 0',
-    textAlign: 'center',
+
+  spacing: {
+    sm: "12px",
+    md: "16px",
+    lg: "20px",
+    xl: "25px",
+    xxxl: "30px",
+
+    section: "60px",
+    hero: "80px",
+
+    about: "70px",
+    aboutTop: "100px",
+    aboutBottom: "36px",
+
+    gridTop: "36px",
+    card: "22px",
   },
-  sliderParagraph: {
-    margin: '0 auto',
-    maxWidth: '320px',
-    textAlign: 'center',
-    lineHeight: '1.5',
+
+  gap: {
+    small: "8px",
+    medium: "14px",
+    large: "20px",
+    nav: "25px",
+    hero: "40px",
   },
-  arrowLeft: {
-    position: 'absolute',
-    left: '10px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '34px',
-    height: '34px',
-    borderRadius: '8px',
-    textAlign: 'center',
-    border: '1px solid #fff',
-    background: '#4ECDC4',
-    cursor: 'pointer',
+
+  shape: {
+    borderRadius: 8,
+    cardRadius: 28,
+    boxRadius: 10,
+    largeRadius: 12,
+    pillRadius: "10px",
   },
-  arrowRight: {
-    position: 'absolute',
-    right: '10px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '34px',
-    height: '34px',
-    borderRadius: '8px',
-    border: '1px solid #fff',
-    background: '#4ECDC4',
-    cursor: 'pointer',
+
+  border: {
+    width: "1px",
+    style: "solid",
   },
-  dots: { 
-    display: 'flex', 
-    justifyContent: 'center',
-    gap: '8px', 
-    marginTop: '30px',
+
+  shadow: {
+    card: "0 4px 15px rgba(0,0,0,0.03)",
   },
-  dot: {
-    width: '10px',
-    height: '6px',
-    borderRadius: '10px',
-    background: '#d9dce6',
-    cursor: 'pointer',
-  },
-  dotActive: {
-    width: '10px',
-    height: '6px',
-    borderRadius: '10px',
-    background: '#4ECDC4',
-  },
-  about: {
-    padding: '70px 60px',
-    textAlign: 'center',
-    marginTop: '100px',
-  },
-  aboutPara: {
-    color: '#333',
-    maxWidth: '850px',
-    margin: '16px auto 36px',
-    lineHeight: '1.7',
-    fontSize: '15px',
-  },
-  aboutList: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gap: '14px',
-    maxWidth: '700px',
-    margin: '0 auto',
-    textAlign: 'center',
-  },
-  aboutBox: {
-    background: '#fff',
-    border: '1px solid #4ECDC4',
-    padding: '14px 16px',
-    borderRadius: '10px',
-    fontSize: '14px',
-    color: '#333',
-  },
-  included: {
-    padding: '60px 20px',
-    textAlign: 'center',
-    width: '100%',
-  },
-  includeGrid: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '20px',
-    justifyContent: 'center',
-    marginTop: '36px',
-    maxWidth: '1100px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  includeCard: {
-    background: 'white',
-    border: '1px solid #4ECDC4',
-    padding: '22px',
-    borderRadius: '12px',
-    boxShadow: '0 4px 15px rgba(0,0,0,0.03)',
-    width: '300px',
-    flexGrow: 1,
-    maxWidth: '350px',
-    minHeight: '120px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px',
-    textAlign: 'left',
-  },
-  includeCardTitle: {
-    margin: '0 0 8px 0',
-    fontSize: '16px',
-    fontWeight: '700',
-  },
-  includeCardText: {
-    margin: 0,
-    fontSize: '14px',
-    color: '#333',
-    lineHeight: '1.4',
-  },
-  footer: {
-    background: '#164b8b',
-    padding: '20px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  footerRight: {
-    display: 'flex',
-    gap: '12px',
-  },
-  footerLeft: {
-    color: '#fff',
-  },
-  footBtn: {
-    background: 'transparent',
-    backgroundColor: 'transparent',
-    color: '#fff',
-    border: '1px solid #4ECDC4',
-    textDecoration: 'none',
-    padding: '8px 18px',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    fontSize: '13px',
-  },
-  footBtnSignup:{
-  background:"#4ECDC4",
-  color:"#fff",
-  border:"1px solid #4ECDC4",
-  padding:"8px 18px",
-  borderRadius:"8px",
-  fontWeight:"600",
-  textDecoration:"none",
-  fontSize:"13px"
-}
-}
+};
+
+export const ThemeContext = createContext(theme);
+
+const ThemeProvider = ({ children }) => {
+  return (
+    <ThemeContext.Provider value={theme}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export default ThemeProvider;

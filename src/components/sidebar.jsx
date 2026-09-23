@@ -8,7 +8,6 @@ function Sidebar({ navItems, styles, user }) {
   return (
     <aside style={styles.sidebar}>
 
-      {/* User */}
       <div style={styles.profile}>
 
         <div style={styles.avatar}>
@@ -27,8 +26,6 @@ function Sidebar({ navItems, styles, user }) {
 
       </div>
 
-
-      {/* Dashboard Menu */}
       <nav style={styles.menu}>
 
         <h4 style={styles.menuTitle}>
@@ -53,8 +50,6 @@ function Sidebar({ navItems, styles, user }) {
 
       </nav>
 
-
-      {/* Bottom Menu */}
       <div style={styles.bottomMenu}>
 
         <h4 style={styles.menuTitle}>
@@ -67,11 +62,6 @@ function Sidebar({ navItems, styles, user }) {
         >
           Help & Support
         </Link>
-
-
-        <h4 style={styles.menuTitle}>
-          ACCOUNT
-        </h4>
 
         <Link
           to="/account"

@@ -1,0 +1,65 @@
+export const getStyles = (theme) => ({
+  content: {
+    flex: 1,
+    width: "100%",
+    minHeight: "100vh",
+    padding: theme.spacing.xl,
+    boxSizing: "border-box",
+    backgroundColor: theme.palette.background.default,
+    display: "flex",
+  },
+  card: {
+    width: "100%",
+    minHeight: "calc(100vh - 140px)",
+    backgroundColor: theme.palette.background.paper,
+    border: `${theme.border.width} ${theme.border.style} ${theme.palette.secondary.main}`,
+    borderTop: `4px solid ${theme.palette.secondary.main}`,
+    borderRadius: theme.border.radius.lg,
+    padding: theme.spacing.xl,
+    boxShadow: theme.shadow.card,
+  },
+  heading: {
+    fontSize: "24px",
+    fontWeight: 700,
+    color: theme.palette.text.primary,
+    margin: 0,
+    marginBottom: theme.spacing.lg,
+  },
+  sectionHeader: {
+    fontSize: theme.typography.body.fontSize,
+    fontWeight: 600,
+    color: theme.palette.text.primary,
+    marginBottom: theme.spacing.md,
+  },
+  faqItem: {
+    border: `1.5px solid ${theme.palette.secondary.main}`, // teeno box me border - Notification jaisa
+    borderRadius: theme.shape.largeRadius,
+    padding: theme.spacing.lg,
+    marginBottom: theme.spacing.md,
+    backgroundColor: theme.palette.background.paper,
+  },
+  faqTitle: {
+    fontSize: "14px",
+    fontWeight: 600,
+    color: theme.palette.text.primary,
+    margin: 0,
+    marginBottom: "6px",
+  },
+  faqDesc: {
+    fontSize: "13px",
+    color: theme.palette.text.secondary,
+    margin: 0,
+  },
+  contactHeader: {
+    fontSize: "14px",
+    fontWeight: 600,
+    color: theme.palette.text.primary,
+    marginTop: theme.spacing.xl,
+    marginBottom: theme.spacing.sm,
+  },
+  contactText: {
+    fontSize: "13px",
+    color: theme.palette.text.secondary,
+    lineHeight: "1.5",
+  },
+});

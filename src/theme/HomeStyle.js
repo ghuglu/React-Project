@@ -231,8 +231,10 @@ export const getStyles = (theme) => ({
   about: {
     padding: `${theme.spacing.about} ${theme.spacing.section}`,
     textAlign: "center",
-    marginTop: theme.spacing.aboutTop,
+    marginTop: "80px",
+    paddingTop: "40px",
     backgroundColor: theme.palette.background.default,
+    scrollMarginTop: "80px",
   },
 
   aboutPara: {

@@ -12,12 +12,15 @@ import HelpSupport from "./pages/HomeSupport";
 
 import { getStyles } from "./theme/HomeStyle";
 import { getStyles as getOverviewStyles } from "./theme/OverviewStyle"; 
+import { getStyles as getOverviewStyles } from "./theme/OverviewStyle"; 
 import ThemeProvider, { theme } from "./theme/themeContext";
 
 function App() {
 
   const styles = getStyles(theme);
   const overviewStyles = getOverviewStyles(theme); 
+  const overviewStyles = getOverviewStyles(theme); 
+
 
   return (
     <ThemeProvider>
@@ -31,11 +34,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/security" element={<Security />} />
             <Route path="/notification" element={<Notification />} />
-            <Route path="/help" element={<HelpSupport />} />
-
-
-
-
+            <Route path="/help" element={<HelpSupport />}
           </Routes>
       </Router>
     </ThemeProvider>

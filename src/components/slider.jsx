@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { getStyles } from "../theme/HomeStyle";
-import { ThemeContext } from "../theme/themecontext";
+import { ThemeContext } from "../theme/themeContext";
 
 const SliderCard = ({ slides }) => {
   const [index, setIndex] = useState(0);

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { getStyles } from "../theme/HomeStyle";
 import { ThemeContext } from "../theme/themeContext";
 
@@ -16,6 +16,14 @@ const SliderCard = ({ slides }) => {
   const nextSlide = () => {
     setIndex((index + 1) % slides.length);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   return (
     <div style={styles.card}>

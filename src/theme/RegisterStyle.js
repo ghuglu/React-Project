@@ -77,6 +77,8 @@ export const getStyles = (theme) => {
       outline: "none",
       boxSizing: "border-box",
       fontFamily: theme.typography.fontFamily,
+      WebkitTextFillColor: theme.palette.text.primary,
+
     },
 
     inputHint: {

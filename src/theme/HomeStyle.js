@@ -207,11 +207,16 @@ export const getStyles = (theme) => ({
   },
 
   dots: {
-    display: "flex",
-    justifyContent: "center",
-    gap: theme.gap.small,
-    marginTop: theme.spacing.xxxl,
-  },
+  position: "absolute",
+  bottom: theme.spacing.xxxl,
+  left: "50%",
+  transform: "translateX(-50%)",
+
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: theme.gap.small,
+},
 
   dot: {
     width: "10px",
@@ -231,8 +236,8 @@ export const getStyles = (theme) => ({
   about: {
     padding: `${theme.spacing.about} ${theme.spacing.section}`,
     textAlign: "center",
-    marginTop: "80px",
-    paddingTop: "40px",
+    marginTop: "150px",
+    paddingTop: "80px",
     backgroundColor: theme.palette.background.default,
     scrollMarginTop: "80px",
   },
@@ -271,6 +276,9 @@ export const getStyles = (theme) => ({
     padding: `${theme.spacing.section} ${theme.spacing.lg}`,
     textAlign: "center",
     width: "100%",
+    minHeight: "100vh",
+    paddingTop: "120px",
+    scrollMarginTop: "90px",
     backgroundColor: theme.palette.background.default,
   },
 

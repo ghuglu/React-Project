@@ -66,7 +66,7 @@ export const getStyles = (theme) => ({
     fontSize: "14px",
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
-    
+    WebkitTextFillColor: theme.palette.text.primary,
   },
 
 
@@ -76,6 +76,7 @@ export const getStyles = (theme) => ({
     marginTop: "6px",
     display: "block",
   },
+
 
 
   loginOptions: {

@@ -12,7 +12,7 @@ import HelpSupport from "./pages/HelpSupport";
 
 import { getStyles } from "./theme/HomeStyle";
 import { getStyles as getOverviewStyles } from "./theme/OverviewStyle";
-import ThemeProvider, { theme } from "./theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 
 function App() {
 

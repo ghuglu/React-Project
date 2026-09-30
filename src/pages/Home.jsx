@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
 import { getStyles } from "../theme/HomeStyle.js";
-import { theme } from "../theme/themeContext.js";
+import { ThemeContext } from "../theme/themecontext";
 
 const navLinks = [
   { label: "About", id: "about", type: "scroll" },

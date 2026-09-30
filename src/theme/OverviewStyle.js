@@ -1,7 +1,8 @@
 export const getStyles = (theme) => ({
   dashboard: {
     display: "flex",
-    minHeight: "100vh",
+    height: "100vh",
+    overflow: "hidden",
     backgroundColor: theme.palette.background.default,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
@@ -9,11 +10,18 @@ export const getStyles = (theme) => ({
   sidebar: {
     width: "245px",
     minWidth: "245px",
+    height: "100vh",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: 1000,
     backgroundColor: theme.palette.background.paper,
     borderRight: `${theme.border.width} ${theme.border.style} ${theme.palette.border.light}`,
     display: "flex",
     flexDirection: "column",
     boxSizing: "border-box",
+    overflowY: "auto",
   },
   profile: {
     display: "flex",
@@ -47,14 +55,14 @@ export const getStyles = (theme) => ({
     color: theme.palette.text.primary,
   },
   menu: {
-    padding: "28px 14px",
+    padding: `${theme.spacing.lg} ${theme.spacing.md} ${theme.spacing.sm} ${theme.spacing.md}`,
   },
   menuTitle: {
     margin: "0 0 12px 6px",
     fontSize: "11px",
     color: theme.palette.text.primary,
     letterSpacing: "1px",
-    fontWeight: 600,
+    fontWeight: 800,
   },
   navLink: {
     display: "block",
@@ -66,6 +74,8 @@ export const getStyles = (theme) => ({
     fontSize: "14px",
     fontWeight: 500,
     cursor: "pointer",
+    border: "1px solid transparent",
+    borderLeft: "4px solid transparent",
   },
   activeLink: {
     display: "block",
@@ -81,9 +91,21 @@ export const getStyles = (theme) => ({
     fontWeight: 600,
     cursor: "pointer",
   },
+  accountLink: {
+    display: "block",
+    padding: "11px 14px",
+    textDecoration: "none",
+    color: theme.palette.text.primary,
+    fontSize: "14px",
+    fontWeight: 800,
+},
   bottomMenu: {
-    marginTop: "auto",
+    marginTop: "20px",
     padding: "15px 14px 20px",
+  },
+  quickActionMenu: {
+    marginTop: "auto",
+    padding: "15px 14px 20px"
   },
   signOut: {
     display: "block",
@@ -95,13 +117,20 @@ export const getStyles = (theme) => ({
   },
   main: {
     flex: 1,
+    marginLeft: "245px",
     minWidth: 0,
     display: "flex",
     flexDirection: "column",
+    height: "100vh",
+    overflow: "hidden",
     backgroundColor: theme.palette.background.default,
   },
   topbar: {
+    position: "fixed",
+    width: "100%",
     height: "70px",
+    minHeight: "70px",
+    flexShrink: 0,
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.text.white,
     display: "flex",
@@ -114,15 +143,18 @@ export const getStyles = (theme) => ({
     fontSize: "24px",
     fontWeight: 700,
   },
+  
   content: {
     flex: 1,
-    padding: "40px 48px",
+    padding: "30px 32px",
+    marginTop: "20px",
     overflowY: "auto",
     boxSizing: "border-box",
-    maxWidth: "1600px",
+    maxWidth: "1100px",
     width: "100%",
   },
   welcomeBox: {
+    marginTop: "40px",
     backgroundColor: theme.palette.background.paper,
     border: `1px solid ${theme.palette.secondary.main}`,
     borderTop: `4px solid ${theme.palette.secondary.main}`,
@@ -212,4 +244,5 @@ export const getStyles = (theme) => ({
     fontSize: "13px",
     color: theme.palette.text.primary,
   },
+  
 });

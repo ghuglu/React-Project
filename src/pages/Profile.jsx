@@ -6,7 +6,8 @@ import { getStyles as getOverviewStyles } from "../theme/OverviewStyle";
 import { getStyles as getProfileStyles } from "../theme/ProfileStyle";
 
 function Profile() {
-  const theme = useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+  const  theme = context?.theme || context;
   const overviewStyles = getOverviewStyles(theme);
   const profileStyles = getProfileStyles(theme);
 
@@ -21,11 +22,16 @@ function Profile() {
 
   return (
     <div style={overviewStyles.dashboard}>
-      <Sidebar navItems={navItems} styles={overviewStyles} user={user} />
-      <div style={{ ...overviewStyles.mainArea, flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
-        <Topbar styles={overviewStyles} user={user} />
+      <div style={overviewStyles.sidebar}>
+        <Sidebar navItems={navItems} styles={overviewStyles} user={user} />
+      </div>
+
+      <div style={{ ...overviewStyles.main, flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
+        <div style={overviewStyles.topbar}>
+          <Topbar styles={overviewStyles} user={user} />
+        </div>
         
-        <main style={profileStyles.mainContent}>
+        <main style={{ ...profileStyles.mainContent, marginTop: "24px", padding: "0 32px 32px 32px" }}>
           <div style={profileStyles.profileCard}>
             <h1 style={profileStyles.title}>Profile Settings</h1>
             <h2 style={profileStyles.sectionTitle}>Personal Information</h2>
@@ -58,18 +64,19 @@ function Profile() {
               <div style={profileStyles.formGroup}>
                 <label style={profileStyles.label}>Pin Code</label>
                 <input type="number" placeholder="123456" style={profileStyles.input} />
-                </div>
+              </div>
               <div style={profileStyles.formGroup}>
                 <label style={profileStyles.label}>City</label>
                 <input type="text" placeholder="Ranchi" style={profileStyles.input} />
-                </div>
+              </div>
               <div style={profileStyles.formGroup}>
                 <label style={profileStyles.label}>Country</label>
                 <input type="text" placeholder="India" style={profileStyles.input} />
-                </div>
+              </div>
               <div style={profileStyles.formGroup}>
                 <label style={profileStyles.label}>GitHub Profile</label>
-                <input type="url" placeholder="https://github.com/username" style={profileStyles.input} /></div>
+                <input type="url" placeholder="https://github.com/username" style={profileStyles.input} />
+              </div>
             </div>
 
             <div style={profileStyles.actions}>

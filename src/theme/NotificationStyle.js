@@ -1,6 +1,7 @@
 export const getStyles = (theme) => ({
   content: {
     flex: 1,
+    marginTop: "20px",
     width: "100%",
     padding: theme.spacing.xl,
     boxSizing: "border-box",
@@ -9,6 +10,7 @@ export const getStyles = (theme) => ({
 
   card: {
     width: "100%",
+    marginTop: "40px",
     backgroundColor: theme.palette.background.paper,
     border: `${theme.border.width} ${theme.border.style} ${theme.palette.secondary.main}`,
     borderTop: `4px solid ${theme.palette.secondary.main}`,

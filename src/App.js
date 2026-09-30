@@ -8,16 +8,19 @@ import Splash from "./components/Splash";
 import Profile from "./pages/Profile";
 import Security from "./pages/Security";
 import Notification from "./pages/Notification";
-import HelpSupport from "./pages/HomeSupport";
+import HelpSupport from "./pages/HelpSupport"; 
 
 import { getStyles } from "./theme/HomeStyle";
-import { getStyles as getOverviewStyles } from "./theme/OverviewStyle"; 
+import { getStyles as getOverviewStyles } from "./theme/OverviewStyle";
 import ThemeProvider, { theme } from "./theme/themeContext";
 
 function App() {
 
+
   const styles = getStyles(theme);
-  const overviewStyles = getOverviewStyles(theme); 
+  const OverviewStyles = getOverviewStyles(theme); 
+  
+
 
   return (
     <ThemeProvider>
@@ -27,15 +30,11 @@ function App() {
             <Route path="/home" element={<Home styles={styles} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Overview styles={overviewStyles} />} /> 
+            <Route path="/dashboard" element={<Overview styles={OverviewStyles} />} /> 
             <Route path="/profile" element={<Profile />} />
             <Route path="/security" element={<Security />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/help" element={<HelpSupport />} />
-
-
-
-
           </Routes>
       </Router>
     </ThemeProvider>

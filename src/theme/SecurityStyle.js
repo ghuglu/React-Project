@@ -1,6 +1,7 @@
 export const getStyles = (theme) => ({
   content: {
     flex: 1,
+    marginTop: "20px",
     padding: theme.spacing.xl,
     overflowY: "auto",
     boxSizing: "border-box",
@@ -9,6 +10,7 @@ export const getStyles = (theme) => ({
   securityContainer: {
     width: "100%",
     maxWidth: "100%",
+    marginTop: "40px",
   },
   securityCard: {
     width: "100%",
@@ -22,7 +24,7 @@ export const getStyles = (theme) => ({
   securityDescription: {
     fontSize: theme.typography.small.fontSize,
     fontWeight: theme.typography.small.fontWeight,
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     lineHeight: theme.typography.body.lineHeight,
     margin: 0,
   },
@@ -58,6 +60,7 @@ export const getStyles = (theme) => ({
     fontSize: theme.typography.body1.fontSize,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
+    WebkitTextFillColor: theme.palette.text.primary,
     backgroundColor: theme.palette.background.default,
     border: `${theme.border.width} ${theme.border.style} ${theme.palette.border.light}`,
     borderRadius: `${theme.shape.borderRadius}px`,
@@ -89,13 +92,7 @@ export const getStyles = (theme) => ({
     borderRadius: theme.shape.pillRadius,
     cursor: "pointer",
   },
-  informationTitle: {
-    fontSize: theme.typography.h3.fontSize,
-    fontWeight: theme.typography.h3.fontWeight,
-    color: theme.palette.text.primary,
-    margin: 0,
-    marginBottom: theme.spacing.sm,
-  },
+ 
   infoRow: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",

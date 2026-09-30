@@ -1,39 +1,38 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../theme/themeContext";
+import { getStyles } from "../theme/OverviewStyle"
 
-function Sidebar({ navItems, styles, user }) {
-
+function Sidebar({ navItems, user }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+  const styles = getStyles(theme);
+
+  const handleSignOut = () => {
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    sessionStorage.clear();
+
+    navigate("/login");
+  }
 
   return (
     <aside style={styles.sidebar}>
-
       <div style={styles.profile}>
-
-        <div style={styles.avatar}>
-          {user.initials}
-        </div>
+        <div style={styles.avatar}>{user.initials}</div>
 
         <div>
-          <h3 style={styles.userName}>
-            {user.name}
-          </h3>
-
-          <p style={styles.userEmail}>
-            {user.email}
-          </p>
+          <h3 style={styles.userName}>{user.name}</h3>
+          <p style={styles.userEmail}>{user.email}</p>
         </div>
-
       </div>
 
       <nav style={styles.menu}>
-
-        <h4 style={styles.menuTitle}>
-          DASHBOARD
-        </h4>
+        <h4 style={styles.menuTitle}>DASHBOARD</h4>
 
         {navItems.map((item, index) => (
-
           <Link
             key={index}
             to={item.path}
@@ -45,40 +44,34 @@ function Sidebar({ navItems, styles, user }) {
           >
             {item.label}
           </Link>
-
         ))}
-
       </nav>
 
       <div style={styles.bottomMenu}>
+        <h4 style={styles.menuTitle}>QUICK ACTION</h4>
 
-        <h4 style={styles.menuTitle}>
-          QUICK ACTION
-        </h4>
-
-        <Link
-          to="/help"
-          style={styles.navLink}
-        >
+        <Link to="/help" style={
+          location.pathname === "/help"
+          ?styles.activeLink
+          :styles.navLink
+        }>
           Help & Support
         </Link>
-
-        <Link
-          to="/account"
-          style={styles.navLink}
-        >
+        </div>
+       
+       <div style={styles.quickActionMenu}>
+        <Link to="/account" style={
+               location.pathname === "/account"
+               ?styles.activeLink
+               :styles.accountLink}>
           Account
         </Link>
 
-        <Link
-          to="/signin"
-          style={styles.signOut}
-        >
+        <div onClick ={handleSignOut}>
           Sign Out
-        </Link>
-
-      </div>
-
+        </div>
+        </div>
+      
     </aside>
   );
 }

@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/OverviewStyle"
 
 function Sidebar({ navItems, user }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const styles = getStyles(theme);
 
   const handleSignOut = () => {

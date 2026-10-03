@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/OverviewStyle"
 
 function Sidebar({ navItems, user }) {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/LoginStyle";
 import { Link, useNavigate } from "react-router-dom";
 

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/sidebar";
 import Topbar from "../components/topbar";
-import { ThemeContext } from "../theme/themecontext";
+import { ThemeContext } from "../theme/themeContext";
 import { getStyles } from "../theme/OverviewStyle";
 
 function Dashboard() {
@@ -12,10 +12,26 @@ function Dashboard() {
 
   const navigate = useNavigate();
 
+  const currentUser = JSON.parse(
+    localStorage.getItem("currentUser")
+  );
+
+  if (!currentUser) {
+    navigate("/login");
+    return null;
+  }
+
   const user = {
-    initials: "DU",
-    name: "Demo User",
-    email: "demo@webtech.practice"
+    initials:
+      (currentUser.firstName?.charAt(0) || "") +
+      (currentUser.lastName?.charAt(0) || ""),
+
+    name:
+      `${currentUser.firstName || ""} ${
+        currentUser.lastName || ""
+      }`.trim(),
+
+    email: currentUser.email
   };
 
   const navItems = [

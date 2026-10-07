@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Sidebar from "../components/sidebar";
 import Topbar from "../components/topbar";
-import { ThemeContext } from "../theme/themecontext";
+import { ThemeContext } from '../theme/themeContext'
 import { getStyles as getOverviewStyles } from "../theme/OverviewStyle";
 import { getStyles as getHelpStyles } from "../theme/HelpStyle";
 

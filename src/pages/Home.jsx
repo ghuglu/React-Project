@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext}from "react";
 import { Link } from "react-router-dom";
 
 import SliderCard from "../components/slider.jsx";
@@ -6,7 +6,8 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
 import { getStyles } from "../theme/HomeStyle.js";
-import { ThemeContext } from "../theme/themecontext";
+import { ThemeContext } from '../theme/themeContext'
+
 
 const navLinks = [
   { label: "About", id: "about", type: "scroll" },
@@ -110,7 +111,7 @@ const ServicesSection = ({ heading, data, styles }) => {
 };
 
 function Home() {
-
+  const theme  = useContext(ThemeContext);
   const styles = getStyles(theme);
 
   const handleScroll = (id) => {

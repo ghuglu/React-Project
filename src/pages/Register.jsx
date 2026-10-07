@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themecontext";
+import { ThemeContext } from "../theme/themeContext";
 import { getStyles } from "../theme/RegisterStyle";
 import { Link } from "react-router-dom";
+import RegisterForm from "../forms/RegisterForm";
 
 const Register = () => {
   const theme = useContext(ThemeContext);
@@ -10,48 +11,27 @@ const Register = () => {
   return (
     <div style={styles.container}>
       <div style={styles.authCard}>
-        <h2 style={styles.title}>Create your account</h2>
-        <p style={styles.subtitle}>Sign up to access the practice dashboard.</p>
 
-        <div style={styles.row}>
-          <div style={styles.inputGroup}>
-            <label style={styles.inputLabel}>First Name:</label>
-            <input style={styles.inputField} placeholder="Enter First Name" />
-          </div>
-          <div style={styles.inputGroup}>
-            <label style={styles.inputLabel}>Last Name:</label>
-            <input style={styles.inputField} placeholder="Enter Last Name" />
-          </div>
-        </div>
+        <h2 style={styles.title}>
+          Create your account
+        </h2>
 
-        <div style={styles.fullGroup}>
-          <label style={styles.inputLabel}>Email Address:</label>
-          <input style={styles.inputField} placeholder="Enter your email Address" />
-        </div>
+        <p style={styles.subtitle}>
+          Sign up to access the practice dashboard.
+        </p>
 
-        <div style={styles.row}>
-          <div style={styles.inputGroup}>
-            <label style={styles.inputLabel}>Password:</label>
-            <input style={styles.inputField} type="password" placeholder="Enter Password" />
-          </div>
-          <div style={styles.inputGroup}>
-            <label style={styles.inputLabel}>Confirm Password:</label>
-            <input style={styles.inputField} type="password" placeholder="confirm Password" />
-          </div>
-        </div>
-
-        <p style={styles.inputHint}>Use at least 8 characters,with letter & number</p>
-
-        <div style={styles.terms}>
-          <input type="checkbox" style={styles.checkbox} />
-          <span>I agree to the Terms</span>
-        </div>
-
-         <button style={styles.primaryBtn}>Create Account</button> 
+        <RegisterForm styles={styles} />
 
         <p style={styles.bottomText}>
-          Already Have account? <Link to="/login" style={styles.bottomLink}>Sign In</Link>
+          Already Have account?{" "}
+          <Link
+            to="/login"
+            style={styles.bottomLink}
+          >
+            Sign In
+          </Link>
         </p>
+
       </div>
     </div>
   );

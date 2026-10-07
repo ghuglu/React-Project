@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext  } from "react";
 
 export const theme = {
   palette: {
@@ -77,7 +77,7 @@ export const theme = {
 
 export const ThemeContext = createContext(theme);
 
-const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
   );

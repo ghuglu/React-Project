@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/LoginStyle";
 import { Link } from "react-router-dom";
 import LoginForm from "../forms/LoginForm";

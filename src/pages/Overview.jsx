@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/sidebar";
 import Topbar from "../components/topbar";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/OverviewStyle";
 
 function Dashboard() {

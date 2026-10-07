@@ -12,7 +12,7 @@ import HelpSupport from "./pages/HelpSupport";
 
 import { getStyles } from "./theme/HomeStyle";
 import { getStyles as getOverviewStyles } from "./theme/OverviewStyle";
-import { ThemeContext, ThemeProvider } from './theme/themeContext';
+import { ThemeContext, ThemeProvider } from './theme/themecontext';
 
 function AppContent() {
   const  theme  = useContext(ThemeContext);

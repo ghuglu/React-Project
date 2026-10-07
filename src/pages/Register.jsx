@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 import { getStyles } from "../theme/RegisterStyle";
 import { Link } from "react-router-dom";
 import RegisterForm from "../forms/RegisterForm";

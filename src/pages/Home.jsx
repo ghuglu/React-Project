@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
 import { getStyles } from "../theme/HomeStyle.js";
-import { ThemeContext } from '../theme/themeContext'
+import { ThemeContext } from '../theme/themecontext'
 
 
 const navLinks = [

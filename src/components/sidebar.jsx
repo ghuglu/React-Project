@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getStyles } from "../theme/OverviewStyle";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../theme/themecontext";
 
 function Sidebar({ navItems, user }) {
   const location = useLocation();

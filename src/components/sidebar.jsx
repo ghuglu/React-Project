@@ -1,20 +1,19 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { getStyles } from "../theme/OverviewStyle";
 import { ThemeContext } from "../theme/themecontext";
-import { getStyles } from "../theme/OverviewStyle"
 
 function Sidebar({ navItems, user }) {
   const location = useLocation();
   const navigate = useNavigate();
+
   const theme = useContext(ThemeContext);
   const styles = getStyles(theme);
 
   const handleSignOut = () => {
-
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     sessionStorage.clear();
-
     navigate("/login");
   }
 
@@ -22,7 +21,6 @@ function Sidebar({ navItems, user }) {
     <aside style={styles.sidebar}>
       <div style={styles.profile}>
         <div style={styles.avatar}>{user.initials}</div>
-
         <div>
           <h3 style={styles.userName}>{user.name}</h3>
           <p style={styles.userEmail}>{user.email}</p>
@@ -31,7 +29,6 @@ function Sidebar({ navItems, user }) {
 
       <nav style={styles.menu}>
         <h4 style={styles.menuTitle}>DASHBOARD</h4>
-
         {navItems.map((item, index) => (
           <Link
             key={index}
@@ -49,7 +46,6 @@ function Sidebar({ navItems, user }) {
 
       <div style={styles.bottomMenu}>
         <h4 style={styles.menuTitle}>QUICK ACTION</h4>
-
         <Link to="/help" style={
           location.pathname === "/help"
           ?styles.activeLink
@@ -71,8 +67,10 @@ function Sidebar({ navItems, user }) {
           Sign Out
         </div>
         </div>
-      
-    </aside>
+
+
+
+               </aside>
   );
 }
 

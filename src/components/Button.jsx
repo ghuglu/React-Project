@@ -5,4 +5,4 @@ const Button = ({ text, onClick, type="button" }) => {
     </button>
   )
 }
-export default Button
+export default Button;

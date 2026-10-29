@@ -11,7 +11,7 @@ export const getStyles = (theme) => ({
     width: "100%",
     marginTop: theme.spacing.section, 
     backgroundColor: theme.palette.background.paper,
-    border: `1px solid ${theme.palette.border.default}`,
+    border: `1px solid ${theme.palette.secondary.main}`,
     borderTop: `4px solid ${theme.palette.secondary.main}`, 
     borderRadius: theme.shape.largeRadius,
     padding: theme.spacing.xxxl, 

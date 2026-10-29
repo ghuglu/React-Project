@@ -150,8 +150,9 @@ export const getStyles = (theme) => ({
     marginTop: "20px",
     overflowY: "auto",
     boxSizing: "border-box",
-    maxWidth: "1100px",
+    maxWidth: "100%",
     width: "100%",
+    minHeight: "calc(100vh - 140px)",
   },
   welcomeBox: {
     marginTop: "40px",
@@ -162,6 +163,9 @@ export const getStyles = (theme) => ({
     padding: "36px",
     boxShadow: "none",
     boxSizing: "border-box",
+    flex: 1,
+    minHeight: "calc(100vh - 140px)",
+
   },
   welcomeTitle: {
     margin: "0 0 8px",

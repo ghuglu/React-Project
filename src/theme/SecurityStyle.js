@@ -6,11 +6,14 @@ export const getStyles = (theme) => ({
     overflowY: "auto",
     boxSizing: "border-box",
     backgroundColor: theme.palette.background.default,
+    minHeight: "calc(100vh - 80px)",
+
   },
   securityContainer: {
     width: "100%",
     maxWidth: "100%",
     marginTop: "40px",
+    flex: 1,
   },
   securityCard: {
     width: "100%",
@@ -20,6 +23,8 @@ export const getStyles = (theme) => ({
     borderRadius: theme.border.radius.lg,
     padding: theme.spacing.card,
     boxShadow: theme.shadow.card,
+    minHeight: "calc(100vh - 140px)",
+
   },
   securityDescription: {
     fontSize: theme.typography.small.fontSize,
@@ -92,12 +97,15 @@ export const getStyles = (theme) => ({
     borderRadius: theme.shape.pillRadius,
     cursor: "pointer",
   },
- 
-  infoRow: {
+  securityInfoTitle: {
+    marginTop: "50px",
+  },
+    infoRow: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: theme.gap.large,
     width: "100%",
+    marginTop: "20px",
   },
   infoCard: {
     display: "flex",
@@ -108,6 +116,7 @@ export const getStyles = (theme) => ({
     borderRadius: theme.shape.largeRadius,
     padding: theme.spacing.md,
     boxShadow: theme.shadow.card,
+    minHeight: "100px",
   },
   infoIcon: {
     fontSize: theme.typography.h3.fontSize,

@@ -91,7 +91,7 @@ const LoginForm = ({ styles }) => {
           )}
 
         <span style={styles.inputHint}>
-          Password must be at least 6 characters long.
+          Password must be at least 8 characters long.
         </span>
       </div>
 
